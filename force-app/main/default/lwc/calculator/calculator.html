@@ -1,0 +1,38 @@
+<template>
+    <div class="container">
+        <header class="header">
+            <div class="time">
+                <p>{currentTime}</p>
+            </div>
+            <input type="text" value={label.calculator} oninput={handleLabelChange} class="label-input" /> 
+        </header>
+        <div class="icon-container">
+            <div class="minimize-icon" onclick={handleMinimizeClick}>
+                <lightning-icon icon-name="utility:contract_alt" size="small" alternative-text="Minimize"></lightning-icon>
+            </div>
+            <div class="battery">
+                <lightning-icon icon-name="utility:battery" size="small" alternative-text="Battery"></lightning-icon>
+            </div>
+            <div class="app-icon">
+                <lightning-icon icon-name="utility:apps" size="small" alternative-text="Apps"></lightning-icon>
+                <span class="dots" onclick={handleDotsClick}>⋮</span>
+            </div>
+        </div>
+       
+        <div class="calculator-display">
+            <input type="text" value={displayValue} class="display" readonly /> <!-- Display value for calculator -->
+        </div>
+       
+        <div class="button-container">
+            <template for:each={buttonsWithClasses} for:item="button">
+                <button 
+                    key={button.label} 
+                    class={button.class} 
+                    onclick={handleButtonClick}
+                >
+                    {button.label}
+                </button>
+            </template>
+        </div>
+    </div>
+</template>

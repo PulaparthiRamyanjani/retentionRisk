@@ -1,0 +1,96 @@
+<template>
+    <!-- List of addresses displayed in a grid format -->
+    <template if:true={addresses}>
+        <template for:each={addresses} for:item="address">
+            <div key={address.Id} class="slds-box slds-m-around_medium slds-text-color_dark">
+                <p><strong>{address.Name}</strong></p>
+                <p>{address.Street__c}</p>
+                <p>{address.City__c}</p>
+                <p>{address.State__c}</p>
+                <p>{address.PostalCode__c}</p>
+                <p>{address.Country__c}</p>
+                <p>{address.LandMark__c}</p>
+                <button data-id={address.Id} onclick={handleEdit}>Edit</button>
+                <button data-id={address.Id} onclick={handleDelete}>Delete</button>
+            </div>
+        </template>
+    </template>
+ 
+    <!-- Add New Address Button -->
+    <button class="slds-box slds-m-around_medium slds-text-color_dark" onclick={handleAddNewAddress} >Add New Address</button>
+ 
+    <!-- Modal for Add/Edit -->
+    <template if:true={showEditModal}>
+        <section role="dialog" tabindex="-1" class="slds-modal slds-fade-in-open">
+            <div class="slds-modal__container">
+                <header class="slds-modal__header">
+                    <h2 class="slds-text-heading_medium">{modalTitle}</h2>
+                    <button class="slds-button slds-button_icon slds-modal__close" title="Close" onclick={closeModal}>
+                        <lightning-icon icon-name="utility:close" alternative-text="close" size="small"></lightning-icon>
+                        <span class="slds-assistive-text">Close</span>
+                    </button>
+                </header>
+                <div class="slds-modal__content slds-p-around_medium">
+                    <lightning-input name="Name" label="Name" value={selectedAddress.Name} onchange={handleFieldChange}></lightning-input>
+                    <lightning-input name="Street__c" label="Street" value={selectedAddress.Street__c} onchange={handleFieldChange}></lightning-input>
+                    <lightning-input name="City__c" label="City" value={selectedAddress.City__c} onchange={handleFieldChange}></lightning-input>
+                    <lightning-input name="State__c" label="State" value={selectedAddress.State__c} onchange={handleFieldChange}></lightning-input>
+                    <lightning-input name="PostalCode__c" label="Postal Code" value={selectedAddress.PostalCode__c} onchange={handleFieldChange}></lightning-input>
+                   
+                    <!-- Country Dropdown -->
+                    <lightning-combobox
+                        name="Country__c"
+                        label="Country"
+                        value={selectedAddress.Country__c}
+                        options={countryOptions}
+                        onchange={handleCountryChange}>
+                    </lightning-combobox>
+                   
+                    <lightning-input name="LandMark__c" label="Landmark" value={selectedAddress.LandMark__c} onchange={handleFieldChange}></lightning-input>
+                </div>
+                <footer class="slds-modal__footer">
+                    <lightning-button variant="neutral" label="Cancel" onclick={closeModal}></lightning-button>
+                    <lightning-button variant="brand" label="Save" onclick={handleSave}></lightning-button>
+                </footer>
+            </div>
+        </section>
+        <div class="slds-backdrop slds-backdrop_open"></div>
+    </template>
+ 
+    <template if:true={showAddModal}>
+        <section role="dialog" tabindex="-1" class="slds-modal slds-fade-in-open">
+            <div class="slds-modal__container">
+                <header class="slds-modal__header">
+                    <h2 class="slds-text-heading_medium">Add New Address</h2>
+                    <button class="slds-button slds-button_icon slds-modal__close" title="Close" onclick={closeModal}>
+                        <lightning-icon icon-name="utility:close" alternative-text="close" size="small"></lightning-icon>
+                        <span class="slds-assistive-text">Close</span>
+                    </button>
+                </header>
+                <div class="slds-modal__content slds-p-around_medium">
+                    <lightning-input name="Name" label="Name" value={selectedAddress.Name} onchange={handleFieldChange}></lightning-input>
+                    <lightning-input name="Street__c" label="Street" value={selectedAddress.Street__c} onchange={handleFieldChange}></lightning-input>
+                    <lightning-input name="City__c" label="City" value={selectedAddress.City__c} onchange={handleFieldChange}></lightning-input>
+                    <lightning-input name="State__c" label="State" value={selectedAddress.State__c} onchange={handleFieldChange}></lightning-input>
+                    <lightning-input name="PostalCode__c" label="Postal Code" value={selectedAddress.PostalCode__c} onchange={handleFieldChange}></lightning-input>
+                   
+                    <!-- Country Dropdown -->
+                    <lightning-combobox
+                        name="Country__c"
+                        label="Country"
+                        value={selectedAddress.Country__c}
+                        options={countryOptions}
+                        onchange={handleCountryChange}>
+                    </lightning-combobox>
+ 
+                    <lightning-input name="LandMark__c" label="Landmark" value={selectedAddress.LandMark__c} onchange={handleFieldChange}></lightning-input>
+                </div>
+                <footer class="slds-modal__footer">
+                    <lightning-button variant="neutral" label="Cancel" onclick={closeModal}></lightning-button>
+                    <lightning-button variant="brand" label="Save" onclick={handleSave}></lightning-button>
+                </footer>
+            </div>
+        </section>
+        <div class="slds-backdrop slds-backdrop_open"></div>
+    </template>
+</template>

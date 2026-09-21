@@ -1,0 +1,17 @@
+<template>
+    <div class="slds-p-around_medium">
+        <h2>Cancel Order</h2>
+ 
+       
+        <p>Are you sure you want to cancel your order? All items in the order will be canceled.</p>
+ 
+        <lightning-button label="Cancel" onclick={handleCancel}></lightning-button>
+        <lightning-button label="Continue" variant="brand" onclick={handleContinue}></lightning-button>
+ 
+        <template if:true={errorMessage}>
+            <div class="slds-box slds-theme_error slds-m-top_medium">
+                <p>{errorMessage}</p>
+            </div>
+        </template>
+    </div>
+</template>

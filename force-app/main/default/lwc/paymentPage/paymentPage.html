@@ -1,0 +1,33 @@
+<template>
+    
+    <lightning-card title="Select Payment Method">
+        <div class="slds-p-around_medium">
+            <!-- Credit Card Option -->
+            <lightning-button label="Credit Card" onclick={handleCreditCardPayment}></lightning-button>
+            
+            <!-- Stripe Option -->
+            <lightning-button label="Stripe" onclick={handleStripePayment}></lightning-button>
+
+            <!-- PayPal Option -->
+            <lightning-button label="PayPal" onclick={handlePayPalPayment}></lightning-button>
+            
+            <!-- Paytm Option -->
+            <lightning-button label="Paytm" onclick={handlePaytmPayment}></lightning-button>
+            
+            <!-- Cash on Delivery Option -->
+            <lightning-button label="Cash on Delivery" onclick={handleCashOnDelivery}></lightning-button>
+        </div>
+
+        <!-- Display PayPal-specific information if PayPal is selected -->
+        <!-- <template if:true={isPayPalProcessing}>
+            <div class="slds-m-top_medium">
+                <lightning-spinner alternative-text="Processing PayPal Payment..."></lightning-spinner>
+                <p>Redirecting to PayPal...</p>
+              
+            </div>
+        </template> -->
+        <template if:true={approvalUrl}>
+            <iframe src={approvalUrl} width="auto" height="auto" sandbox="allow-scripts allow-top-navigation-by-user-activation"></iframe>
+        </template>
+    </lightning-card>
+</template>

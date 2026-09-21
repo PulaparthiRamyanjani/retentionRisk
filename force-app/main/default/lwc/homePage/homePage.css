@@ -1,0 +1,54 @@
+.lightning-card {
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    border-radius: 0.5rem;
+}
+
+
+.slds-m-around_medium {
+    margin: 1.5rem;
+}
+
+
+h2 {
+    font-size: 1.5rem;
+    color: #0070d2; 
+    margin-bottom: 0.5rem;
+}
+
+
+p {
+    font-size: 1rem;
+    color: #333; 
+    margin: 0.5rem 0; 
+}
+
+
+p.no-cart-message {
+    color: #a10000; 
+    font-weight: bold;
+}
+
+
+.lightning-button {
+    margin-top: 1rem;
+    background-color: #0070d2; 
+    color: white;
+    border: none;
+}
+
+
+.lightning-button:hover {
+    background-color: #005fb2; 
+}
+
+
+lightning-datatable {
+    margin-top: 1rem;
+}
+
+
+.empty-datatable-message {
+    text-align: center; 
+    font-weight: bold;
+    color: #a10000;
+}

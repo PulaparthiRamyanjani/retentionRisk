@@ -1,0 +1,41 @@
+<template>
+    <lightning-card title="Home Page" icon-name="custom:custom63">
+        <div class="slds-m-around_medium">
+          
+            <template if:true={openCart}>
+                <h2>Open Cart</h2>
+                <p>Cart ID: {openCart.Name}</p>
+            </template>
+           
+ 
+          
+            <template if:true={openOrder}>
+                <h2>Open Order Details</h2>
+                <p>Order No: {openOrder.Name}</p> 
+                <p>Order Amount: {openOrder.Total__c}</p> 
+                <p>Shipping Address: {openOrder.ShippingAddress__c}</p> 
+                <p>Payment Status: {openOrder.Payment_Status__c}</p>
+            </template>
+            <template if:false={openOrder}>
+                <p>No open order found.</p>
+            </template>
+ 
+            
+            <h2>Recent Orders</h2>
+            <template if:true={recentOrders}>
+                <lightning-datatable
+                    key-field="Id"
+                    data={recentOrders}
+                    columns={columns}
+                    hide-checkbox-column>
+                </lightning-datatable>
+            </template>
+            <template if:false={recentOrders}>
+                <p>No recent orders found.</p>
+            </template>
+ 
+          
+            <lightning-button label="Go to Product List" onclick={navigateToProductList}></lightning-button>
+        </div>
+    </lightning-card>
+</template>

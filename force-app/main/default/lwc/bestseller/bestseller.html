@@ -1,0 +1,18 @@
+<template>
+    <!-- Stylish Bestsellers heading -->
+    <div class="bestsellers-heading">
+        Bestsellers
+    </div>
+    
+
+    <!-- Product container displaying products side by side -->
+    <div class="products-container">
+        <template for:each={bestSellers} for:item="product">
+            <div key={product.Id} class="product">
+                <img src={product.imageUrl} alt={product.Name} class="product-image" />
+                <h3 class="product-name">{product.Name}</h3>
+                <p class="product-price">${product.Cost_Price__c}</p>
+            </div>
+        </template>
+    </div>
+</template>

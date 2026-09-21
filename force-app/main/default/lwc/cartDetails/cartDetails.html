@@ -1,0 +1,74 @@
+<template>
+    <div class="cart-container">
+        <h2>Your Cart</h2>
+ 
+      
+        <template if:true={cartItems}>
+            <table class="cart-table">
+                <thead>
+                    <tr>
+                        <th>Product</th>
+                        <th>Image</th>
+                        <th>Price</th>
+                        <th>Quantity</th>
+                        <th>Actions</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <template for:each={cartItems} for:item="item">
+                        <tr key={item.Id}>
+                            <td>{item.Product__r.Name}</td>
+                            <td>
+                                <template if:true={item.ProductImages}>
+                                    <img src={item.ProductImages.URL__c} alt="Product Image" style="width: 100px; height: auto;"/>
+                                </template>
+                                <template if:false={item.ProductImages}>
+                                    <span>No Image Available</span>
+                                </template>
+                            </td>
+                            <td>{item.ListPrice__c}</td>
+                            <td>
+                                <lightning-button-icon icon-name="utility:chevronleft"
+                                    data-id={item.Id}
+                                    onclick={decreaseQuantity}
+                                    alternative-text="Decrease Quantity"></lightning-button-icon>
+                                <span>{item.Quantity__c}</span>
+                                <lightning-button-icon icon-name="utility:chevronright"
+                                    data-id={item.Id}
+                                    onclick={increaseQuantity}
+                                    alternative-text="Increase Quantity"></lightning-button-icon>
+                            </td>
+                         
+                            <td>
+                                <lightning-button label="Delete" onclick={removeFromCart} data-id={item.Id}></lightning-button>
+                            </td>
+                        </tr>
+                    </template>
+                </tbody>
+            </table>
+              
+              <div class="slds-m-top_medium">
+                <lightning-input label="Coupon Code" value={couponCode} onchange={handleCouponChange} placeholder="Enter Coupon Code"></lightning-input>
+                <lightning-button label="Apply Coupon" onclick={applyCoupons}>Apply Coupon</lightning-button>
+                <lightning-button label="Remove Coupon" onclick={removeCoupon}  disabled={isCouponNotApplied}>Remove Coupon</lightning-button>
+            </div>
+            <template if:true={isCouponApplied}>
+                <p class="applied-message">Coupon applied: {couponCode}</p>
+            </template>
+           
+            <div class="cart-total">
+                <p><strong>Total Amount: {totalAmount}</strong></p>
+            </div>
+            <div class="Discount-Price">
+                <p>Discount: {discountedAmount}</p>
+                <p>Grand Total: {grandTotal}</p>
+            </div>
+        </template>
+ 
+      
+        <template if:true={isEmptyCart}>
+            <p>Your cart is empty.</p>
+        </template>
+        <lightning-button label="Checkout" onclick={handleCheckout}></lightning-button>
+    </div>
+</template>

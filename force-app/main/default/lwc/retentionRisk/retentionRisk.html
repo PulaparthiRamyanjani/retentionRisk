@@ -1,0 +1,540 @@
+<template>
+
+    <lightning-card>
+
+        <!-- ================================================= -->
+        <!-- HEADER -->
+        <!-- ================================================= -->
+
+        <div class="section-header">
+
+            <div class="section-title">
+                Retention Risk Details
+            </div>
+
+            <template if:false={isEditMode}>
+
+                <lightning-button
+                    variant="base"
+                    label="Edit"
+                    onclick={handleEdit}>
+                </lightning-button>
+
+            </template>
+
+        </div>
+
+
+        <!-- ================================================= -->
+        <!-- LOADING -->
+        <!-- ================================================= -->
+
+        <template if:true={isLoading}>
+
+            <div class="spinner-container">
+
+                <lightning-spinner
+                    alternative-text="Loading Retention Risk">
+                </lightning-spinner>
+
+            </div>
+
+        </template>
+
+
+        <!-- ================================================= -->
+        <!-- VIEW MODE -->
+        <!-- ================================================= -->
+
+        <template if:false={isLoading}>
+
+            <template if:false={isEditMode}>
+
+                <div class="record-container">
+
+
+                    <!-- ============================== -->
+                    <!-- LEFT COLUMN -->
+                    <!-- ============================== -->
+
+                    <div class="record-column">
+
+
+                        <div class="field-row">
+
+                            <div class="field-label">
+                                RVP Qualitative Assessment
+                            </div>
+
+                            <div class="field-value">
+                                {rvpQDisplay}
+                            </div>
+
+                        </div>
+
+
+                        <div class="field-row">
+
+                            <div class="field-label">
+                                Cease Participation Conferences/Events
+                            </div>
+
+                            <div class="field-value">
+                                {ceaseParticipationDisplay}
+                            </div>
+
+                        </div>
+
+
+                        <div class="field-row">
+
+                            <div class="field-label">
+                                Major Pending Policy Changes Impact
+                            </div>
+
+                            <div class="field-value">
+                                {majorDisplay}
+                            </div>
+
+                        </div>
+
+
+                        <div class="field-row">
+
+                            <div class="field-label">
+                                TNPS Score
+                            </div>
+
+                            <div class="field-value">
+                                {tnpsDisplay}
+                            </div>
+
+                        </div>
+
+
+                        <div class="field-row">
+
+                            <div class="field-label">
+                                Declining Total Open Accounts
+                            </div>
+
+                            <div class="field-value">
+                                {decliningTotalOpenAccountsDisplay}
+                            </div>
+
+                        </div>
+
+
+                        <div class="field-row">
+
+                            <div class="field-label">
+                                Succession Plan In Place?
+                            </div>
+
+                            <div class="field-value">
+                                {successionPlanInDisplay}
+                            </div>
+
+                        </div>
+
+
+                        <div class="field-row">
+
+                            <div class="field-label">
+                                Primary At Risk Reason
+                            </div>
+
+                            <div class="field-value">
+                                {primaryAtRiskReasonDisplay}
+                            </div>
+
+                        </div>
+
+
+                        <div class="field-row">
+
+                            <div class="field-label">
+                                Secondary At Risk Reason
+                            </div>
+
+                            <div class="field-value">
+                                {secondaryAtRiskReasonDisplay}
+                            </div>
+
+                        </div>
+
+                    </div>
+
+
+                    <!-- ============================== -->
+                    <!-- RIGHT COLUMN -->
+                    <!-- ============================== -->
+
+                    <div class="record-column">
+
+
+                        <div class="field-row">
+
+                            <div class="field-label">
+                                Declining GDC
+                            </div>
+
+                            <div class="field-value">
+                                {decliningGdcDisplay}
+                            </div>
+
+                        </div>
+
+
+                        <div class="field-row">
+
+                            <div class="field-label">
+                                Non-Responsive
+                            </div>
+
+                            <div class="field-value">
+                                {nonResponsiveDisplay}
+                            </div>
+
+                        </div>
+
+
+                        <div class="field-row">
+
+                            <div class="field-label">
+                                Advisor Engaging With Competition
+                            </div>
+
+                            <div class="field-value">
+                                {advisorEngagingDisplay}
+                            </div>
+
+                        </div>
+
+
+                        <div class="field-row">
+
+                            <div class="field-label">
+                                Imminent Departure Noted
+                            </div>
+
+                            <div class="field-value">
+                                {imminentDepartureDisplay}
+                            </div>
+
+                        </div>
+
+
+                        <div class="field-row">
+
+                            <div class="field-label">
+                                Forgivable Loans
+                            </div>
+
+                            <div class="field-value">
+                                {forgivableLoansDisplay}
+                            </div>
+
+                        </div>
+
+
+                        <div class="field-row">
+
+                            <div class="field-label">
+                                Change In Total AUA SSS Flows
+                            </div>
+
+                            <div class="field-value">
+                                {changeInTotalDisplay}
+                            </div>
+
+                        </div>
+
+
+                        <div class="field-row">
+
+                            <div class="field-label">
+                                Final Attriation Risk Summary
+                            </div>
+
+                            <div class="field-value">
+                                {finalAttriationRiskSummaryDisplay}
+                            </div>
+
+                        </div>
+
+
+                        <div class="field-row">
+
+                            <div class="field-label">
+                                Tertiary At Risk Reason
+                            </div>
+
+                            <div class="field-value">
+                                {tertiaryAtRiskReasonDisplay}
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+                <!-- ======================================= -->
+                <!-- COMMENT VIEW -->
+                <!-- Only visible for non-Green -->
+                <!-- ======================================= -->
+
+                <template if:true={showRiskReasonComment}>
+
+                    <div class="comment-view">
+
+                        <div class="field-label">
+                            Risk Reason Comment
+                        </div>
+
+                        <div class="comment-value">
+                            {riskReasonCommentDisplay}
+                        </div>
+
+                    </div>
+
+                </template>
+
+            </template>
+
+
+            <!-- ================================================= -->
+            <!-- EDIT MODE -->
+            <!-- ================================================= -->
+
+            <template if:true={isEditMode}>
+
+                <div class="edit-container">
+
+                    <div class="form-grid">
+
+
+                        <!-- ============================== -->
+                        <!-- LEFT COLUMN -->
+                        <!-- ============================== -->
+
+                        <div class="column">
+
+
+                            <lightning-combobox
+                                name="rvpQ"
+                                label="RVP Qualitative Assessment"
+                                value={rvpQ}
+                                options={rvpQOptions}
+                                onchange={handleChange}>
+                            </lightning-combobox>
+
+
+                            <lightning-combobox
+                                name="ceaseParticipation"
+                                label="Cease Participation Conferences/Events"
+                                value={ceaseParticipation}
+                                options={ceaseParticipationOptions}
+                                onchange={handleChange}>
+                            </lightning-combobox>
+
+
+                            <lightning-combobox
+                                name="major"
+                                label="Major Pending Policy Changes Impact"
+                                value={major}
+                                options={majorOptions}
+                                onchange={handleChange}>
+                            </lightning-combobox>
+
+
+                            <lightning-combobox
+                                name="tnps"
+                                label="TNPS Score"
+                                value={tnps}
+                                options={tnpsOptions}
+                                onchange={handleChange}>
+                            </lightning-combobox>
+
+
+                            <lightning-combobox
+                                name="decliningTotalOpenAccounts"
+                                label="Declining Total Open Accounts"
+                                value={decliningTotalOpenAccounts}
+                                options={decliningTotalOpenAccountsOptions}
+                                onchange={handleChange}>
+                            </lightning-combobox>
+
+
+                            <lightning-combobox
+                                name="successionPlanIn"
+                                label="Succession Plan In Place?"
+                                value={successionPlanIn}
+                                options={successionPlanInOptions}
+                                onchange={handleChange}>
+                            </lightning-combobox>
+
+
+                            <!-- PRIMARY -->
+                            <lightning-combobox
+                                name="primaryAtRiskReason"
+                                label="Primary At Risk Reason"
+                                value={primaryAtRiskReason}
+                                options={primaryAtRiskReasonOptions}
+                                onchange={handleChange}
+                                disabled={riskReasonsDisabled}>
+                            </lightning-combobox>
+
+
+                            <!-- SECONDARY -->
+                            <lightning-combobox
+                                name="secondaryAtRiskReason"
+                                label="Secondary At Risk Reason"
+                                value={secondaryAtRiskReason}
+                                options={secondaryAtRiskReasonOptions}
+                                onchange={handleChange}
+                                disabled={riskReasonsDisabled}>
+                            </lightning-combobox>
+
+                        </div>
+
+
+                        <!-- ============================== -->
+                        <!-- RIGHT COLUMN -->
+                        <!-- ============================== -->
+
+                        <div class="column">
+
+
+                            <lightning-combobox
+                                name="decliningGdc"
+                                label="Declining GDC"
+                                value={decliningGdc}
+                                options={decliningGdcOptions}
+                                onchange={handleChange}>
+                            </lightning-combobox>
+
+
+                            <lightning-combobox
+                                name="nonResponsive"
+                                label="Non-Responsive"
+                                value={nonResponsive}
+                                options={nonResponsiveOptions}
+                                onchange={handleChange}>
+                            </lightning-combobox>
+
+
+                            <lightning-combobox
+                                name="advisorEngaging"
+                                label="Advisor Engaging With Competition"
+                                value={advisorEngaging}
+                                options={advisorEngagingOptions}
+                                onchange={handleChange}>
+                            </lightning-combobox>
+
+
+                            <lightning-combobox
+                                name="imminentDeparture"
+                                label="Imminent Departure Noted"
+                                value={imminentDeparture}
+                                options={imminentDepartureOptions}
+                                onchange={handleChange}>
+                            </lightning-combobox>
+
+
+                            <lightning-combobox
+                                name="forgivableLoans"
+                                label="Forgivable Loans"
+                                value={forgivableLoans}
+                                options={forgivableLoansOptions}
+                                onchange={handleChange}>
+                            </lightning-combobox>
+
+
+                            <lightning-combobox
+                                name="changeInTotal"
+                                label="Change In Total AUA SSS Flows"
+                                value={changeInTotal}
+                                options={changeInTotalOptions}
+                                onchange={handleChange}>
+                            </lightning-combobox>
+
+
+                            <!-- FINAL SUMMARY -->
+                            <lightning-combobox
+                                name="finalAttriationRiskSummary"
+                                label="Final Attriation Risk Summary"
+                                value={finalAttriationRiskSummary}
+                                options={finalAttriationRiskSummaryOptions}
+                                onchange={handleRiskSummaryChange}>
+                            </lightning-combobox>
+
+
+                            <!-- TERTIARY -->
+                            <lightning-combobox
+                                name="tertiaryAtRiskReason"
+                                label="Tertiary At Risk Reason"
+                                value={tertiaryAtRiskReason}
+                                options={tertiaryAtRiskReasonOptions}
+                                onchange={handleChange}
+                                disabled={riskReasonsDisabled}>
+                            </lightning-combobox>
+
+                        </div>
+
+                    </div>
+
+
+                    <!-- ===================================== -->
+                    <!-- COMMENT -->
+                    <!-- Only non-Green -->
+                    <!-- ===================================== -->
+
+                    <template if:true={showRiskReasonComment}>
+
+                        <div class="comment-section">
+
+                            <lightning-textarea
+                                name="riskReasonComment"
+                                label="Risk Reason Comment"
+                                value={riskReasonComment}
+                                onchange={handleChange}
+                                required={isReasonRequired}>
+                            </lightning-textarea>
+
+                        </div>
+
+                    </template>
+
+
+                    <!-- ===================================== -->
+                    <!-- BUTTONS -->
+                    <!-- ===================================== -->
+
+                    <div class="button-container">
+
+                        <lightning-button
+                            label="Cancel"
+                            onclick={handleCancel}>
+                        </lightning-button>
+
+
+                        <lightning-button
+                            variant="brand"
+                            label="Save"
+                            onclick={handleSave}>
+                        </lightning-button>
+
+                    </div>
+
+                </div>
+
+            </template>
+
+        </template>
+
+    </lightning-card>
+
+</template>

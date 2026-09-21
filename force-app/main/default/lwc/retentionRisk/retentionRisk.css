@@ -1,0 +1,198 @@
+/* ========================================================= */
+/* HEADER */
+/* ========================================================= */
+
+.section-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    padding: 12px 16px;
+
+    border-bottom: 1px solid #dddbda;
+}
+
+.section-title {
+    font-size: 16px;
+    font-weight: 600;
+    color: #181818;
+}
+
+
+/* ========================================================= */
+/* VIEW MODE */
+/* ========================================================= */
+
+.record-container {
+    display: grid;
+
+    grid-template-columns: 1fr 1fr;
+
+    column-gap: 40px;
+
+    padding: 8px 16px 16px 16px;
+}
+
+
+.record-column {
+    width: 100%;
+}
+
+
+/* ========================================================= */
+/* FIELD ROW */
+/* ========================================================= */
+
+.field-row {
+    min-height: 58px;
+
+    padding: 10px 0;
+
+    border-bottom: 1px solid #dddbda;
+}
+
+
+/* ========================================================= */
+/* FIELD LABEL */
+/* ========================================================= */
+
+.field-label {
+    font-size: 12px;
+
+    color: #444;
+
+    margin-bottom: 5px;
+}
+
+
+/* ========================================================= */
+/* FIELD VALUE */
+/* ========================================================= */
+
+.field-value {
+    font-size: 14px;
+
+    color: #181818;
+
+    min-height: 20px;
+
+    word-break: break-word;
+}
+
+
+/* ========================================================= */
+/* COMMENT VIEW */
+/* ========================================================= */
+
+.comment-view {
+    margin: 0 16px 18px 16px;
+
+    padding: 14px 0;
+
+    border-top: 1px solid #dddbda;
+}
+
+
+.comment-value {
+    font-size: 14px;
+
+    color: #181818;
+
+    white-space: pre-wrap;
+
+    min-height: 30px;
+
+    word-break: break-word;
+}
+
+
+/* ========================================================= */
+/* EDIT MODE */
+/* ========================================================= */
+
+.edit-container {
+    padding: 16px;
+}
+
+
+.form-grid {
+    display: grid;
+
+    grid-template-columns: 1fr 1fr;
+
+    gap: 24px 36px;
+}
+
+
+.column {
+    width: 100%;
+}
+
+
+lightning-combobox {
+    display: block;
+
+    margin-bottom: 18px;
+}
+
+
+lightning-textarea {
+    display: block;
+
+    margin-top: 10px;
+}
+
+
+/* ========================================================= */
+/* COMMENT SECTION */
+/* ========================================================= */
+
+.comment-section {
+    margin-top: 8px;
+}
+
+
+/* ========================================================= */
+/* BUTTONS */
+/* ========================================================= */
+
+.button-container {
+    display: flex;
+
+    justify-content: flex-end;
+
+    gap: 10px;
+
+    margin-top: 20px;
+
+    padding-top: 16px;
+
+    border-top: 1px solid #dddbda;
+}
+
+
+/* ========================================================= */
+/* SPINNER */
+/* ========================================================= */
+
+.spinner-container {
+    position: relative;
+
+    min-height: 150px;
+}
+
+
+/* ========================================================= */
+/* RESPONSIVE */
+/* ========================================================= */
+
+@media (max-width: 768px) {
+
+    .record-container {
+        grid-template-columns: 1fr;
+    }
+
+    .form-grid {
+        grid-template-columns: 1fr;
+    }
+}

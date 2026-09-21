@@ -1,0 +1,10 @@
+.project_title{
+    margin-top: 20px;
+    font-weight: bold;
+    border-bottom: 4px solid #A020f0;
+    border-bottom-width: thick;
+    width: 15%;
+}
+.image_section{
+    width: 80%;
+}

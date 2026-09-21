@@ -1,0 +1,39 @@
+<template>
+    <div class ="slds-p-around_none slds-m-top_x-xmall slds-m-bottom_medium">
+        <lightning-layout multiple-rows>
+        <!-- left side column -->
+            <lightning-layout-item padding="around-small" size="12" medium-device-size="6" large-device-size="6">
+            <div class="project_title">
+                <h1>Projects</h1>
+            </div>
+            <template if:true={projectData}>
+                <lightning-accordion>
+                    <template for:each={projectData} for:item="project">
+                        <lightning-accordion-section key={project.id} name={project.name} label={project.name}>
+                            <div class="slds-m-top_small">
+                                <p class="para_text"> {project.description}</p>
+                                <p class="para_text slds-p-top_medium" ><strong>Technology:</strong> {project.technology}</p>
+                                <p class="para_text slds-p-top_medium" if:true={project.website}>
+                                    <strong>Website:</strong> <a target="_blank" href={project.website}>{project.website}</a>
+                                </p>
+                            </div>
+                        </lightning-accordion-section>
+                    </template>
+                    
+                </lightning-accordion>
+            </template>
+
+
+            </lightning-layout-item>
+
+            <!-- right side column -->
+            <lightning-layout-item padding="around-small" size="12" medium-device-size="6" large-device-size="6">
+             <div class="slds-p-around_medium image_section">
+                <img src ={Project}/>
+             </div>
+            </lightning-layout-item>
+
+
+        </lightning-layout>
+    </div>
+</template>

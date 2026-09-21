@@ -1,0 +1,36 @@
+<template>
+    <!-- Navigation Bar -->
+    <div class="navbar">
+        <!-- Home Button -->
+        <lightning-button-icon 
+            icon-name="utility:home" 
+            alternative-text="Home" 
+            title="Home" 
+            onclick={navigateToHome}>
+        </lightning-button-icon>
+
+        <!-- Skills Button -->
+        <lightning-button-icon 
+            icon-name="utility:setup_assistant_guide" 
+            alternative-text="Skills" 
+            title="Skills" 
+            onclick={navigateToSkills}>
+        </lightning-button-icon>
+
+        <!-- Certifications Button -->
+        <lightning-button-icon 
+            icon-name="utility:contract_doc" 
+            alternative-text="Certifications" 
+            title="Certifications" 
+            onclick={navigateToCertifications}>
+        </lightning-button-icon>
+
+        <!-- Projects Button -->
+        <lightning-button-icon 
+            icon-name="utility:note" 
+            alternative-text="Projects" 
+            title="Projects" 
+            onclick={navigateToProjects}>
+        </lightning-button-icon>
+    </div>
+</template>

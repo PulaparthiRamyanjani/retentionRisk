@@ -1,0 +1,24 @@
+<template>
+    <div class="grand-parent">
+        <div class="header">
+           
+            <div class="label-container">
+                <lightning-icon icon-name="standard:omni_supervisor" alternative-text="Omni Supervisor Icon" size="small"></lightning-icon>
+                <p class="grand-parent-label">Grand Parent</p>
+            </div>
+
+     
+            <lightning-button
+                label="Reset All"
+                variant="brand"
+                class={buttonClass}
+                onclick={resetAll}>
+            </lightning-button>
+        </div>
+
+        <p>{selectedChildrenCount} of 3 Children selected</p>
+
+        <!-- Include parent component -->
+        <c-parent parent-name="Parent" onparentupdate={handleParentUpdate}></c-parent>
+    </div>
+</template>

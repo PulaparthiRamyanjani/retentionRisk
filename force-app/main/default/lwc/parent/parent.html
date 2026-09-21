@@ -1,0 +1,21 @@
+<template>
+    <div class="parent">
+        <div class="label-container">
+            <lightning-icon icon-name="standard:person_account" alternative-text="Parent Icon" size="small"></lightning-icon>
+            <span class="parent-label">Parent</span>
+        </div>
+
+        <div class="status-container">
+            <p>Child One: {childOneStatus}</p>
+            <p>Child Two: {childTwoStatus}</p>
+            <p>Child Three: {childThreeStatus}</p>
+        </div>
+
+        <div class="children">
+            <!-- Child components placed side by side -->
+            <c-child child-name="Child One" onchildtoggle={handleChildToggle}></c-child>
+            <c-child child-name="Child Two" onchildtoggle={handleChildToggle}></c-child>
+            <c-child child-name="Child Three" onchildtoggle={handleChildToggle}></c-child>
+        </div>
+    </div>
+</template>

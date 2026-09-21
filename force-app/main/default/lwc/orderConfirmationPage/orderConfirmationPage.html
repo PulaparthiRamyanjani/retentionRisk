@@ -1,0 +1,55 @@
+<template>
+    <div class="order-confirmation">
+        <lightning-card title="Order Confirmation">
+            <template if:true={order}>
+                <p class="slds-p-horizontal_small">Thank you for your order!</p>
+                <p class="slds-p-horizontal_small">Order Number: {order.Name}</p>
+                <p class="slds-p-horizontal_small">Total Amount: {order.Total__c}</p>
+                <p class="slds-p-horizontal_small">Order Status: {order.Status__c}</p>
+            <!-- Cancel Order Button (Only visible if the order is in process) -->
+            <template if:true={isInProcess}>
+                <lightning-button label="Cancel Order" onclick={handleCancelOrder} class="slds-m-top_medium"></lightning-button>
+            </template>
+              <!-- Re-Order Button (always available) -->
+              <lightning-button label="Re-Order" onclick={handleReOrder} class="slds-m-top_medium"></lightning-button>
+
+                <!-- Display the order line items -->
+                <lightning-card title="Order Items">
+                    <table class="slds-table slds-table_bordered slds-table_cell-buffer">
+                        <thead>
+                            <tr>
+                                <th scope="col">
+                                    <div class="slds-truncate">Product Name</div>
+                                </th>
+                                <th scope="col">
+                                    <div class="slds-truncate">Quantity</div>
+                                </th>
+                                <th scope="col">
+                                    <div class="slds-truncate">Unit Price</div>
+                                </th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <template for:each={orderLineItems} for:item="lineItem">
+                                <tr key={lineItem.Id}>
+                                    <td>
+                                        <div class="slds-truncate">{lineItem.Product__r.Name}</div>
+                                    </td>
+                                    <td>
+                                        <div class="slds-truncate">{lineItem.Quantity__c}</div>
+                                    </td>
+                                    <td>
+                                        <div class="slds-truncate">{lineItem.UnitPrice__c}</div>
+                                    </td>
+                                </tr>
+                            </template>
+                        </tbody>
+                    </table>
+                </lightning-card>
+            </template>
+            <template if:false={order}>
+                <p class="slds-p-horizontal_small">Loading order details...</p>
+            </template>
+        </lightning-card>
+    </div>
+</template>

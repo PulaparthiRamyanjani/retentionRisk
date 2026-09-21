@@ -1,0 +1,41 @@
+.slds-p-around_medium {
+    padding: 1.5rem; 
+    background-color: #f4f6f9;
+    border-radius: 0.5rem;
+}
+
+
+h2 {
+    font-size: 1.5rem; 
+    color: #333; 
+    margin-bottom: 1rem; 
+}
+
+
+p {
+    font-size: 1rem; 
+    color: #666; 
+    margin: 0.5rem 0; 
+}
+
+
+lightning-button {
+    margin-right: 0.5rem;
+}
+
+
+.slds-box {
+    padding: 1rem; 
+    border-radius: 0.25rem; 
+}
+
+.slds-theme_error {
+    background-color: #f2dede;
+    border-color: #ebcccc;
+    color: #a94442; 
+}
+
+
+.slds-m-top_medium {
+    margin-top: 1rem; 
+}

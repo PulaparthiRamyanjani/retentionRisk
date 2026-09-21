@@ -1,0 +1,42 @@
+.card{
+    box-shadow: 8px 2px 4px 0  rgba(0,0,0,0.3);
+    border-radius: 6px;
+    height: 50%;
+    transition: 0.3s;
+    width: 200px;
+}
+.card:hover{
+    box-shadow: 1px 10px 16px 0 black ;
+}
+.card-title{
+    text-align: center;
+    color: #666666;
+    font-weight: bold;
+    margin-bottom: 2px; 
+
+}
+.card-text{
+    font-weight: 500;
+    color: #66686b;
+    text-align: center;
+}
+.card_image{
+    
+    margin-top: 20px;
+    text-align:center;
+    margin: 5vh 0;
+    margin-bottom: 5px;
+}
+.card_image_img{
+    width: 50%;
+    
+
+}
+.title_heading{
+    font-size: 2.5rem;
+    text-align:center;
+    font-weight: bold;
+}
+.certification_div {
+    padding: 10px;
+}

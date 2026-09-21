@@ -1,0 +1,73 @@
+.parent {
+    border: 1px solid #e6e6e6;
+    padding: 20px;
+    margin-top: 10px;
+    border-radius: 10px;
+    background-color: #f7f7f7;
+    text-align: left; /* Align text to the left */
+}
+
+.label-container {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+.parent-label {
+    margin-left: 10px; /* Space between icon and label */
+    font-weight: bold;
+    font-size: 18px;
+}
+
+.status-container {
+    display: flex;
+    justify-content: space-around; /* Space between the status texts */
+    margin: 10px 0; /* Optional spacing for better visuals */
+}
+
+.status-container p {
+    margin: 0; /* Remove default margin for paragraphs */
+    font-weight: normal; /* Adjust font weight if needed */
+}
+
+.children {
+    display: flex;
+    justify-content: space-around; /* Space between child components */
+    margin-top: 10px;
+}
+
+.child {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 10px;
+    border: 1px solid #e6e6e6;
+    border-radius: 5px;
+    background-color: #ffffff;
+    width: 150px;
+}
+
+.child-name {
+    margin-top: 5px;
+    font-weight: bold;
+}
+
+/* Styling for buttons in the child components */
+.select {
+    background-color: #007bff;
+    color: white;
+    padding: 5px 10px;
+    border-radius: 5px;
+    border: none;
+    cursor: pointer;
+}
+
+.deselect {
+    background-color: #dc3545;
+    color: white;
+    padding: 5px 10px;
+    border-radius: 5px;
+    border: none;
+    cursor: pointer;
+}

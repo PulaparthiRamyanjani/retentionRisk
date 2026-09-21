@@ -1,0 +1,40 @@
+<template>
+    
+    <lightning-card title="Order Details" icon-name="standard:orders">
+        <div class="slds-p-around_medium">
+            <p><strong>Order No:</strong> {orderDetails.orderNo}</p>
+            <p><strong>Estimated Delivery Date:</strong> {orderDetails.estimatedDeliveryDate}</p>
+            <p><strong>Total Amount:</strong> {orderDetails.totalAmount}</p>
+        </div>
+    </lightning-card>
+ 
+    
+    <div class="slds-grid slds-wrap slds-p-around_medium">
+        <div class="slds-col slds-size_1-of-2">
+            <lightning-card title="Shipping Address">
+                <p>{orderDetails.shippingAddress}</p>
+            </lightning-card>
+        </div>
+        <div class="slds-col slds-size_1-of-2">
+            <lightning-card title="Billing Address">
+                <p>{orderDetails.billingAddress}</p>
+            </lightning-card>
+        </div>
+    </div>
+ 
+
+    <lightning-card title="Order Items">
+        <lightning-datatable
+            key-field="id"
+            data={orderDetails.orderItems}
+            columns={columns}>
+        </lightning-datatable>
+    </lightning-card>
+ 
+  
+    <div class="slds-p-around_medium">
+        <lightning-button variant="brand" label="Re-Order" onclick={handleReOrder}></lightning-button>
+        <lightning-button variant="destructive" label="Cancel Order" onclick={handleCancelOrder}></lightning-button>
+        <lightning-button variant="success" label="Confirm Order" onclick={handleConfirmOrder}></lightning-button>
+    </div>
+</template>

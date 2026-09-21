@@ -1,0 +1,9 @@
+.slds-button_brand {
+    background-color: #007bff; 
+    color: white;
+}
+ 
+.slds-button_success {
+    background-color: hsl(323, 61%, 41%); 
+    color: white;
+}

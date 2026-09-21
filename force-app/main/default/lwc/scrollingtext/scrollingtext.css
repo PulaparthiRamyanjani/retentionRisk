@@ -1,0 +1,27 @@
+/* Container styling */
+.scrolling-container {
+    overflow: hidden; /* Ensures the text stays within bounds */
+    white-space: nowrap;
+    background-color: #f4f4f4; /* Light gray background */
+    padding: 10px;
+    font-size: 18px; /* Font size */
+    color: #333; /* Text color */
+    border-radius: 5px; /* Rounded edges for the container */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Optional shadow for style */
+}
+
+/* Scrolling text animation */
+.scrolling-text {
+    display: inline-block;
+    animation: scroll 10s linear infinite; /* Infinite scrolling */
+}
+
+/* Keyframes for scrolling effect */
+@keyframes scroll {
+    from {
+        transform: translateX(100%);
+    }
+    to {
+        transform: translateX(-100%);
+    }
+}

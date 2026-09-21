@@ -1,0 +1,77 @@
+/* Custom styles for the product category page */
+
+/* Styling for category buttons */
+.slds-button {
+    background-color: #0070d2; /* Salesforce blue */
+    color: white;
+    font-weight: bold;
+    text-transform: uppercase;
+}
+
+.slds-button:hover {
+    background-color: #005fb2; /* Darker blue on hover */
+}
+
+/* Product image styling */
+.product-image {
+    width: 100%; /* Full width of the container */
+    max-height: 150px; /* Set a maximum height to prevent overflow */
+    object-fit: contain; /* Maintain aspect ratio without cropping */
+    border: 1px solid #e1e1e1; /* Light grey border */
+    border-radius: 5px; /* Rounded corners */
+    margin-bottom: 0.5rem; /* Space below the image */
+}
+
+/* Box styling for products */
+.slds-box {
+    padding: 1rem; /* Space inside the box */
+    border: 1px solid #e1e1e1; /* Light grey border */
+    border-radius: 5px; /* Rounded corners */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+    transition: transform 0.2s; /* Smooth scale effect */
+}
+
+.slds-box:hover {
+    transform: scale(1.02); /* Slightly enlarge on hover */
+}
+
+/* Text styling for product names */
+.slds-text-title_bold {
+    font-size: 1.1rem; /* Slightly larger font */
+    margin: 0.5rem 0; /* Space around the title */
+    color: #333; /* Dark grey color for better contrast */
+}
+
+/* Price and availability styling */
+.slds-text-title {
+    margin: 0.5rem 0; /* Space around price and availability */
+}
+
+/* Availability badge styling */
+lightning-badge {
+    margin-top: 0.5rem; /* Space above the badge */
+}
+
+/* Button spacing */
+.slds-button {
+    margin-top: 0.5rem; /* Space above buttons */
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .slds-col {
+        /* Stack categories and products on smaller screens */
+        flex: 0 0 100%; /* Full width */
+        max-width: 100%; /* Full width */
+    }
+
+    .slds-size_1-of-4 {
+        flex: 0 0 100%; /* Stack category buttons */
+        max-width: 100%; /* Full width */
+    }
+
+    .slds-size_1-of-3 {
+        flex: 0 0 100%; /* Stack product boxes */
+        max-width: 100%; /* Full width */
+    }
+}

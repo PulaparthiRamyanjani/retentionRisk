@@ -1,0 +1,50 @@
+div {
+    padding: 1.5rem; 
+    background-color: #f4f6f9; 
+    border-radius: 0.5rem; 
+}
+
+
+lightning-input {
+    margin-bottom: 1rem; 
+}
+
+
+lightning-button {
+    margin-right: 0.5rem; 
+}
+
+
+ul {
+    list-style-type: none; 
+    padding: 0; 
+}
+
+li {
+    background-color: #ffffff; 
+    border: 1px solid #d8dde6; 
+    padding: 0.75rem;
+    margin-bottom: 0.5rem; 
+    border-radius: 0.25rem; 
+    display: flex; 
+    justify-content: space-between; 
+    align-items: center; 
+}
+
+
+.pagination-controls {
+    display: flex;
+    align-items: center; 
+    margin-top: 1rem; 
+}
+
+
+.pagination-controls lightning-button {
+    margin-right: 0.5rem; 
+}
+
+
+.pagination-controls span {
+    font-size: 1rem; 
+    color: #333; 
+}

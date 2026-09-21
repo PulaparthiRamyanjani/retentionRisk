@@ -1,0 +1,100 @@
+.container {
+    padding: 20px;
+    background-color: rgb(244, 248, 249); 
+    border-radius: 8px; 
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); 
+    max-width: 400px; 
+    margin: auto; 
+    position: relative;
+    border: 2px solid black;
+}
+
+.header {
+    display: flex;
+    justify-content: space-between; 
+    align-items: flex-start; 
+}
+
+.time {
+    margin-bottom: 10px; 
+}
+.label-symbol {
+    display: block; 
+    font-size: 1.0em; 
+    text-align: center; 
+}
+
+.icon-container {
+    display: flex; 
+    justify-content: space-between;
+    margin-bottom: 15px; 
+}
+.calculator-display {
+    margin: 10px 0;
+}
+
+.display {
+    width: 100%;
+    height: 50px; 
+    font-size: 2em; 
+    text-align: right; 
+    border: 1px solid #ccc; 
+    border-radius: 5px; 
+    padding: 10px; 
+}
+
+.label-input {
+    width: 150px; 
+    height: 40px; 
+    font-size: 1.5em; 
+    text-align: center; 
+    border: 1px solid #ccc; 
+    border-radius: 5px;
+    margin-left: auto; 
+    margin-bottom: 10px; 
+}
+
+.button-container {
+    display: grid; 
+    grid-template-columns: repeat(4, 1fr); 
+    gap: 10px;
+}
+
+
+.calc-button {
+    width: 70px;
+    height: 70px; 
+    font-size: 1.5em; 
+    border: none; 
+    border-radius: 50%; 
+    cursor: pointer; 
+    display: flex; 
+    justify-content: center; 
+    align-items: center;
+}
+.white-button {
+    background-color: white; /* White background for numbers */
+    color: black; /* Text color */
+}
+.equal{
+        background-color:orangered;
+        color: white; 
+}
+.operation-button {
+    background-color: rgb(168, 171, 171); /* Black background for operations */
+    color:black; /* Text color */
+}
+
+.app-icon {
+    display: flex; 
+    align-items: center; 
+}
+
+.dots {
+    margin-left: 5px; 
+    cursor: pointer; 
+    font-size: 1.5em; 
+    width: 20px; 
+    display: inline-block; 
+    text-align: center; 
+}

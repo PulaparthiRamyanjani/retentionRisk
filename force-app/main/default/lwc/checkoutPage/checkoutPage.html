@@ -1,0 +1,42 @@
+<template>
+    <div class="checkout-page">
+        <h2>Checkout</h2>
+
+        <h3>Cart Summary</h3>
+        <template if:true={cartItems}>
+            <template for:each={cartItems} for:item="item">
+                <div key={item.Id} class="cart-item">
+                    <p>{item.Product__r.Name}</p>
+                    <p>Quantity: {item.Quantity__c}</p>
+                    <p>Price: {item.ListPrice__c}</p>
+                </div>
+            </template>
+            <div class="summary-totals">
+                <p>Total Amount: {totalAmount}</p>
+                <p>Discount: {discountedAmount}</p>
+                <p>Grand Total: {grandTotal}</p>
+            </div>
+        </template>
+
+        <h3>Shipping and Billing Information</h3>
+        <div class="address-container">
+            <!-- Shipping Address -->
+            <div class="address-section">
+                <lightning-input 
+                    label="Shipping Address" 
+                    value={shippingAddress} 
+                    onchange={handleInputChange}>
+                </lightning-input>
+            </div>
+
+            <!-- Billing Address -->
+            <div class="address-section">
+                <lightning-input 
+                    label="Billing Address" 
+                    value={billingAddress} 
+                    onchange={handleInputChange}>
+                </lightning-input>
+            </div>
+        </div>
+    </div>
+</template>

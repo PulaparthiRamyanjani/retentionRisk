@@ -1,0 +1,30 @@
+<template>
+    <lightning-card title="Recent Records" icon-name="standard:record">
+        <div class="slds-p-around_medium">
+            
+            <!-- Cases Table -->
+            <lightning-datatable
+                key-field="Id"
+                data={recordsMap.Cases}
+                columns={caseColumns}
+                hide-checkbox-column="true">
+            </lightning-datatable>
+
+            <!-- Contacts Table -->
+            <lightning-datatable
+                key-field="Id"
+                data={recordsMap.Contacts}
+                columns={contactColumns}
+                hide-checkbox-column="true">
+            </lightning-datatable>
+
+            <!-- Opportunities Table -->
+            <lightning-datatable
+                key-field="Id"
+                data={recordsMap.Opportunities}
+                columns={opportunityColumns}
+                hide-checkbox-column="true">
+            </lightning-datatable>
+        </div>
+    </lightning-card>
+</template>

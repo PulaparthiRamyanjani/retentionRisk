@@ -1,0 +1,63 @@
+.parent {
+    border: 1px solid #e6e6e6;
+    padding: 20px;
+    margin-top: 10px;
+    border-radius: 10px;
+    background-color: #f7f7f7;
+    text-align: center;
+}
+
+.label-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 10px;
+}
+
+.parent-label {
+    margin-left: 10px;
+    font-weight: bold;
+    font-size: 18px;
+}
+
+.children {
+    display: flex;
+    justify-content: space-around; /* Space between child components */
+    margin-top: 10px;
+}
+
+.child {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 10px;
+    border: 1px solid #e6e6e6;
+    border-radius: 5px;
+    background-color: #ffffff;
+    width: 150px;
+}
+
+.child-name {
+    margin-top: 5px;
+    font-weight: bold;
+}
+
+/* Styling for buttons in the child components */
+.select {
+    background-color: green;
+    color: white;
+    padding: 5px 10px;
+    border-radius: 5px;
+    border: none;
+    cursor: pointer;
+}
+
+.deselect {
+    background-color: #dc3545;
+    color: white;
+    padding: 5px 10px;
+    border-radius: 5px;
+    border: none;
+    cursor: pointer;
+}

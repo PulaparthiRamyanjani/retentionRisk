@@ -1,0 +1,29 @@
+/* Style for the Shop Now button */
+.lightning-button {
+    font-size: 25px;
+    font-weight: bold;
+    color: #fff; /* Text color */
+    background-color: #28a745; /* Green background */
+    padding: 20px 30px;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, color 0.3s ease;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Button shadow */
+}
+
+/* Hover effect for the button */
+.lightning-button:hover {
+    background-color: #000; /* Black background on hover */
+    color: #28a745; /* Green text on hover */
+}
+
+/* Center the button on the page */
+:host {
+    display: flex;
+    justify-content: right; /* Center horizontally */
+    align-items: right; /* Center vertically */
+   
+    margin: 0;
+  
+}

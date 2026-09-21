@@ -1,0 +1,24 @@
+:host {
+    --bg-color: #001f3f; /* Dark Blue */
+    --text-color: #f4f4f4; /* Cream */
+}
+
+.slideshow-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 200px;
+    background-color: var(--bg-color);
+    border-radius: 10px;
+    padding: 20px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+.quote {
+    font-size: 2.5rem;
+    font-weight: bold;
+    text-align: center;
+    color: blanchedalmond;
+    width: 100%;
+    padding: 10px;
+}

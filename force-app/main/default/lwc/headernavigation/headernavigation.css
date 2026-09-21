@@ -1,0 +1,25 @@
+/* Styling the navigation bar */
+.navbar {
+    display: flex;
+    justify-content: flex-start;
+    gap: 20px;
+    background-color:whitesmoke; /* Dark gray background for the navbar */
+    padding: 10px;
+    border-radius: 5px; /* Rounded corners for the navbar */
+}
+
+/* Styling for the buttons */
+.navbar lightning-button-icon {
+    background-color: transparent; /* Transparent background for the buttons */
+    border: none;
+    color:darkblue; /* White color for the icons */
+    cursor: pointer; /* Pointer cursor on hover */
+    --sds-c-button-icon-color-foreground:darkblue; /* Ensures icon color is white */
+}
+
+/* Hover effect for the buttons */
+.navbar lightning-button-icon:hover {
+    color: #00aaff; /* Light blue color on hover */
+    --sds-c-button-icon-color-foreground: #00aaff; /* Ensures hover effect for the icon */
+    --sds-c-button-icon-color-background-hover: transparent; /* Avoids background on hover */
+}

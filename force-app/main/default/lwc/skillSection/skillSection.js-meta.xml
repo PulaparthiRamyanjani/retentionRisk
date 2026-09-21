@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<LightningComponentBundle xmlns="http://soap.sforce.com/2006/04/metadata">
+    <apiVersion>62.0</apiVersion>
+    <isExposed>true</isExposed>
+    <targets>
+        <target>lightningCommunity__Page</target>
+        <target>lightningCommunity__Default</target>
+    </targets>
+    <targetConfigs>
+        <targetConfig targets="lightningCommunity__Default">
+            <property name="skillName1" type="String" label="Skill 1"
+                description="what skill you have" default="LWC" />
+            <property name="skillBarValue1" type="String" label="skill Value 1"
+                description="How confident you are"
+                default="70" />
+
+            <property name="skillName2" type="String" label="Skill 2"
+                description="what skill you have" default="LWC" />
+            <property name="skillBarValue2" type="String" label="skill Value 2"
+                description="How confident you are"
+                default="70" />
+
+            <property name="skillName3" type="String" label="Skill 3"
+                description="what skill you have" default="LWC" />
+            <property name="skillBarValue3" type="String" label="skill Value 3"
+                description="How confident you are"
+                default="70" />
+
+            <property name="skillName4" type="String" label="Skill 4"
+                description="what skill you have" default="LWC" />
+            <property name="skillBarValue4" type="String" label="skill Value 4"
+                description="How confident you are"
+                default="70" />
+        </targetConfig>
+    </targetConfigs>
+</LightningComponentBundle>

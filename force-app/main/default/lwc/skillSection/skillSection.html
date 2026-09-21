@@ -1,0 +1,36 @@
+<template>
+    <div class =" sbout_div slds-p-around_none slds-m-top_x-small slds-m-bottom_medium ">
+        <lightning-layout multiple-rows>
+            <!-- left side -->
+            <lightning-layout-item padding="around-small" size ="12" medium-device-size="6" large-device-size="6" class="slds-align_absolute-center">
+            <div class ="profile_pic">
+                <img src={skillImage}/> </div>
+            </lightning-layout-item>
+            <!-- right side -->
+            <lightning-layout-item padding="around-small" size ="12" medium-device-size="6" large-device-size="6" class="slds-align_absolute-center">
+                <div>
+            <div class="profile_title">
+                <h1> Skills</h1>  </div>
+            <p class ="para_text"> Having 1 year of professional experience in salesforce CRM as Developer & Admin. Experienced in Service & Sales Console domain for US clients. </p>
+            <div class ="skills_div">
+                <div class ="slds-p-around_x-small">
+                    <p>{skillName1}</p>
+                    <lightning-progress-bar value={skillBarValue1} size="large" variant="circular"></lightning-progress-bar>  </div>
+               
+                <div class ="slds-p-around_x-small">
+                    <p> {skillName2}</p>
+                    <lightning-progress-bar value={skillBarValue2} size="large" variant="circular"></lightning-progress-bar>  </div>
+               
+                <div class ="slds-p-around_x-small">
+                    <p> {skillName3}</p>
+                    <lightning-progress-bar value={skillBarValue3} size="large" variant="circular"></lightning-progress-bar>   </div>
+              
+                <div class ="slds-p-around_x-small">
+                    <p> {skillName4}</p>
+                    <lightning-progress-bar value={skillBarValue4} size="large" variant="circular"></lightning-progress-bar>  </div>
+            </div>
+        </div>
+            </lightning-layout-item>
+        </lightning-layout>
+    </div>
+</template>

@@ -1,0 +1,26 @@
+<template>
+    <lightning-card title="wire Calling">
+        <lightning-input label="Show Records" variant="brand" onchange={handleChange}></lightning-input>
+        
+        <template if:true={showTable}>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Name</th>
+                        <th>ID</th>
+                        <th>Industry</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <template for:each={fetchedAccounts} for:item="acc">
+                        <tr key={acc.Id}>
+                            <td>{acc.Name}</td>
+                            <td>{acc.Id}</td>
+                            <td>{acc.Industry}</td>
+                        </tr>
+                    </template>
+                </tbody>
+            </table>
+        </template>
+    </lightning-card>
+</template>

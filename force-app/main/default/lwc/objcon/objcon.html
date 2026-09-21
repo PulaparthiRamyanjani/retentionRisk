@@ -1,0 +1,16 @@
+<template>
+    <lightning-card title="All Object Names" icon-name="standard:database">
+    <template if:true={objects.data}>
+    <ul>
+    <!-- Loop through the list of object names and display each one -->
+    <template for:each={objects.data} for:item="objectName">
+    <li key={objectName}>{objectName}</li>
+    </template>
+    </ul>
+    </template>
+    <!-- Display error message if there is an error -->
+    <template if:true={objects.error}>
+    <p>Error fetching object names: {objects.error}</p>
+    </template>
+    </lightning-card>
+    </template>

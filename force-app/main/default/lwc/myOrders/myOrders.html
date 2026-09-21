@@ -1,0 +1,27 @@
+<template>
+    <div>
+       
+        <lightning-input type="date" label="Start Date" onchange={handleStartDateChange}></lightning-input>
+        <lightning-input type="date" label="End Date" onchange={handleEndDateChange}></lightning-input>
+        <lightning-button label="Apply Filter" onclick={filterOrders}></lightning-button>
+
+        <template if:true={paginatedOrders}>
+            <ul>
+                <template for:each={paginatedOrders} for:item="order">
+                    <li key={order.Id}>
+                        {order.Name} - {order.CreatedDate}
+                        <lightning-button label="View details" data-id={order.Id} onclick={viewOrderDetails}></lightning-button>
+                        <lightning-button label="Reorder" data-id={order.Id} onclick={reorder}></lightning-button>
+                    </li>
+                </template>
+            </ul>
+        </template>
+
+      
+        <div class="pagination-controls">
+            <lightning-button label="Previous" onclick={previousPage} disabled={isPreviousDisabled}></lightning-button>
+            <span>Page {currentPage} of {totalPages}</span>
+            <lightning-button label="Next" onclick={nextPage} disabled={isNextDisabled}></lightning-button>
+        </div>
+    </div>
+</template>

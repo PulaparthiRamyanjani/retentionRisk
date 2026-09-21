@@ -1,0 +1,16 @@
+<template>
+    <lightning-card title="Apply Coupon" icon-name="utility:percent">
+        <div class="slds-m-around_medium">
+            <!-- Input for entering the coupon code -->
+            <lightning-input label="Enter Coupon Code" value={couponCode} onchange={handleCouponCodeChange}></lightning-input>
+           
+            <!-- Button to apply the coupon -->
+            <lightning-button label="Apply Coupon" onclick={applyCoupon} class="slds-m-top_medium"></lightning-button>
+           
+            <!-- Message to display success or failure -->
+            <template if:true={couponMessage}>
+                <p class="slds-m-top_medium">{couponMessage}</p>
+            </template>
+        </div>
+    </lightning-card>
+</template>

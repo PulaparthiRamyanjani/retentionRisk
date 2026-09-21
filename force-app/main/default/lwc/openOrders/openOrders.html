@@ -1,0 +1,32 @@
+<template>
+    <lightning-card title="Open Orders" icon-name="custom:custom63">
+        <template if:true={openOrders}>
+            <table class="slds-table slds-table_cell-buffer slds-table_bordered slds-table_striped">
+                <thead>
+                    <tr>
+                        <th scope="col">Order No</th>
+                        <th scope="col">Order Amount</th>
+                        <th scope="col">Shipping Address</th>
+                        <th scope="col">Payment Status</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <template for:each={openOrders} for:item="order">
+                        <tr key={order.Id}>
+                            <td>{order.Name}</td>
+                            <td>{order.Total__c}</td>
+                            <td>{order.Shipping_Address__c}</td>
+                            <td>{order.Payment_Status__c}</td>
+                        </tr>
+                    </template>
+                </tbody>
+            </table>
+        </template>
+        <template if:true={error}>
+            <p>Error loading open orders: {error.message}</p>
+        </template>
+        <template if:false={openOrders}>
+            <p>No open orders available.</p>
+        </template>
+    </lightning-card>
+</template>

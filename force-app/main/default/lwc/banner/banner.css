@@ -1,0 +1,31 @@
+/* Full-width banner styling */
+.banner {
+    width: 100%; /* Full width */
+    background-color: #ff9800; /* Bright orange background for attention */
+    color: #fff; /* White text */
+    padding: 15px 0; /* Vertical and horizontal padding */
+    text-align: center; /* Center the text */
+    font-size: 20px; /* Large text size */
+    font-weight: bold; /* Bold font */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+    position: relative; /* Relative position for animations or future updates */
+    animation: slideIn 1s ease-out; /* Optional: Slide-in animation */
+}
+
+/* Text styling inside the banner */
+.banner-text {
+    margin: 0;
+    padding: 0;
+}
+
+/* Keyframes for slide-in effect */
+@keyframes slideIn {
+    from {
+        transform: translateY(-100%);
+        opacity: 0;
+    }
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}

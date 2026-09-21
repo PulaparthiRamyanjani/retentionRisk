@@ -1,0 +1,41 @@
+.grand-parent {
+    border: 1px solid #e6e6e6;
+    padding: 20px;
+    border-radius: 10px;
+    background-color: #f7f7f7;
+}
+ 
+.header {
+    display: flex; /* Flexbox for layout */
+    justify-content: space-between; /* Spread the label/icon on the left and button on the right */
+    align-items: center; /* Vertically center items */
+    margin-bottom: 10px; /* Space between the header and content */
+}
+ 
+.label-container {
+    display: flex; /* Flexbox to align icon and label horizontally */
+    align-items: center; /* Vertically center icon and text */
+}
+ 
+.grand-parent-label {
+    font-weight: bold;
+    font-size: 18px;
+    margin-left: 10px; /* Space between the icon and the label */
+}
+ 
+
+.no-select {
+    background-color: blue !important; 
+    --sds-c-button-brand-color-background:blue;
+    border-color:blue;
+    color:white !important;
+   
+}
+
+.full-select {
+    background-color: #dc3545 !important; /* Red */
+    --sds-c-button-brand-color-background: #dc3545;
+    border-color: #dc3545;
+    color: white !important;
+   
+}

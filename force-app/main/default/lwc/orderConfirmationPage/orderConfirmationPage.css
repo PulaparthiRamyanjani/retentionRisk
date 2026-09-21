@@ -1,0 +1,58 @@
+/* orderConfirmation.css */
+
+/* Style for the main order confirmation container */
+.order-confirmation {
+    padding: 1.5rem; /* Padding around the content */
+    background-color: #f4f6f9; /* Light background color for contrast */
+    border-radius: 0.5rem; /* Rounded corners */
+}
+
+/* Style for the lightning card title */
+lightning-card {
+    margin-top: 1rem; /* Space above the card */
+}
+
+/* Style for the thank you message and order details */
+p {
+    font-size: 1rem; /* Standard font size for paragraphs */
+    color: #333; /* Dark gray for better readability */
+    margin: 0.5rem 0; /* Space between paragraphs */
+}
+
+/* Style for the buttons */
+.lightning-button {
+    margin-top: 1rem; /* Space above the button */
+}
+
+/* Style for the order items card */
+lightning-card[title="Order Items"] {
+    margin-top: 1.5rem; /* Space above the order items card */
+}
+
+/* Style for the order items table */
+.slds-table {
+    width: 100%; /* Full width for the table */
+}
+
+/* Style for table header */
+th {
+    background-color: #e0e0e0; /* Light gray for table header */
+    text-align: left; /* Left align text in header */
+}
+
+/* Style for table rows */
+tr {
+    border-bottom: 1px solid #d8dde6; /* Light border between rows */
+}
+
+/* Hover effect for table rows */
+tr:hover {
+    background-color: #f0f0f0; /* Light background on hover */
+}
+
+/* Style for truncated text in the table */
+.slds-truncate {
+    overflow: hidden; /* Prevent overflow */
+    text-overflow: ellipsis; /* Show ellipsis for overflow text */
+    white-space: nowrap; /* Prevent text wrapping */
+}

@@ -1,0 +1,54 @@
+<template>
+    <div class="slds-grid slds-wrap slds-p-around_medium">
+        <!-- Display parent categories -->
+        <template for:each={categories} for:item="category">
+            <div key={category.Id} class="slds-col slds-size_1-of-4 slds-m-around_x-small">
+                <lightning-button label={category.Name} data-id={category.Id} onclick={handleCategoryClick}></lightning-button>
+                
+                <!-- Display subcategories if any -->
+                <template if:true={category.subcategories}>
+                    <div class="slds-m-left_medium">
+                        <template for:each={category.subcategories} for:item="subcategory">
+                            <!-- Correct syntax for key -->
+                            <div key={subcategory.Id} class="slds-col slds-size_1-of-4 slds-m-around_x-small">
+                                <lightning-button label={subcategory.Name} data-id={subcategory.Id} onclick={handleCategoryClick}></lightning-button>
+                            </div>
+                        </template>
+                    </div>
+                </template>
+            </div>
+        </template>
+    </div>
+
+    <!-- Display products in a 3x3 grid -->
+    <template if:true={products}>
+        <div class="slds-grid slds-wrap slds-p-around_medium">
+            <template for:each={products} for:item="product">
+                <div key={product.productId} class="slds-col slds-size_1-of-3 slds-p-around_medium">
+                    <div class="slds-box">
+                        <!-- Product Image -->
+                        <img src={product.heroImageUrl} alt={product.productName} class="product-image" style="max-width: 100%;" />
+
+                        <!-- Product Name (clickable) -->
+                        <p class="slds-text-title_bold">
+                            <a href="javascript:void(0);" data-id={product.productId} onclick={handleProductClick}>
+                                {product.productName}
+                                {product.Id}
+                            </a>
+                        </p>
+                        <p class="slds-text-title">
+                            Price: ₹{product.productPrice}
+                        </p>
+                        <p class="slds-text-title">
+                            Availability: <lightning-badge label={product.stockStatus} class={product.stockStatus}></lightning-badge>
+                        </p>
+
+                        <!-- Add to Cart Button -->
+                        <lightning-button label="Add to Cart" data-id={product.productId} onclick={handleAddToCart}></lightning-button>
+                        <lightning-button label="Go to Cart" data-id={product.productId} onclick={handleGoToCart}></lightning-button>
+                    </div>
+                </div>
+            </template>
+        </div>
+    </template>
+</template>

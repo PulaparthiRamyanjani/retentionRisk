@@ -1,0 +1,34 @@
+<template>
+    <lightning-card title="User Profile Viewer" icon-name="custom:custom19">
+        <div class="slds-m-around_medium">
+            <lightning-input 
+                label="User Name" 
+                value={username} 
+                onchange={handleInputChange}
+                placeholder="Enter User Name">
+            </lightning-input>
+            
+            <lightning-button 
+                label="Fetch User Profile" 
+                onclick={handleFetchUserProfile}
+                class="slds-m-top_medium">
+            </lightning-button>
+
+            <template if:true={loading}>
+                <p>Loading...</p>
+            </template>
+
+            <template if:true={error}>
+                <p class="slds-text-color_error">Error: {error}</p>
+            </template>
+
+            <template if:true={userProfile.Id}>
+                <div class="slds-m-top_medium">
+                    <p><strong>Name:</strong> {userProfile.Name}</p>
+                    <p><strong>Email:</strong> {userProfile.Email}</p>
+                    <p><strong>Phone:</strong> {userProfile.Phone}</p>
+                </div>
+            </template>
+        </div>
+    </lightning-card>
+</template>

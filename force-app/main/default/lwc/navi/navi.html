@@ -1,0 +1,36 @@
+<template>
+    <div class="navigation-bar">
+        <!-- Navigation Items -->
+        <lightning-button-icon
+            icon-name="utility:home"
+            alternative-text="Home"
+            class="nav-item"
+            onclick={navigateHome}>
+            <span class="nav-label">Home</span>
+        </lightning-button-icon>
+        
+        <lightning-button-icon
+            icon-name="utility:products"
+            alternative-text="Products"
+            class="nav-item"
+            onclick={navigateProducts}>
+            <span class="nav-label">Products</span>
+        </lightning-button-icon>
+        
+        <lightning-button-icon
+            icon-name="utility:cart"
+            alternative-text="Cart"
+            class="nav-item"
+            onclick={navigateCart}>
+            <span class="nav-label">Cart</span>
+        </lightning-button-icon>
+        
+        <lightning-button-icon
+            icon-name="utility:apps"
+            alternative-text="My Orders"
+            class="nav-item"
+            onclick={navigateMyOrders}>
+            <span class="nav-label">My Orders</span>
+        </lightning-button-icon>
+    </div>
+</template>

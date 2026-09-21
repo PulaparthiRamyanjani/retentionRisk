@@ -1,0 +1,26 @@
+<template>
+    <div class="pagination-container">
+        <!-- Display paginated records -->
+        <template if:true={paginatedRecords}>
+            <template for:each={paginatedRecords} for:item="record">
+                <p key={record.Id}>{record.Name}</p>
+            </template>
+        </template>
+        
+        <!-- Message if no records found -->
+        <template if:false={paginatedRecords.length}>
+            <p>No records to display.</p>
+        </template>
+
+        <!-- Pagination controls -->
+        <div class="pagination-controls">
+            <button data-direction="previous" onclick={handlePageChange} disabled={isPreviousDisabled}>
+                Previous
+            </button>
+            <span>Page {currentPage} of {totalPages}</span>
+            <button data-direction="next" onclick={handlePageChange} disabled={isNextDisabled}>
+                Next
+            </button>
+        </div>
+    </div>
+</template>

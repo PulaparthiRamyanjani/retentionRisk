@@ -1,0 +1,27 @@
+<template>
+    <lightning-card title="Payment Details">
+        <div class="slds-m-around_medium">
+            <lightning-combobox
+                label="Choose Payment Method"
+                value={selectedPaymentMethod}
+                placeholder="Select Payment Method"
+                options={paymentOptions}
+                onchange={handlePaymentMethodChange}>
+            </lightning-combobox>
+ 
+            <!-- Conditionally render Pay with PayPal button -->
+            <template if:true={showPayPalButton}>
+                <lightning-button
+                    label="Pay with PayPal"
+                    onclick={handlePayWithPayPal}
+                    variant="brand">
+                </lightning-button>
+            </template>
+        </div>
+ 
+        <div class="slds-m-top_medium">
+            <!-- Display Payment Status -->
+            <p>{paymentStatus}</p>
+        </div>
+    </lightning-card>
+</template>

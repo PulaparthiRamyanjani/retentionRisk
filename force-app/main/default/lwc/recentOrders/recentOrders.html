@@ -1,0 +1,27 @@
+<template>
+    <lightning-card title="Recent Orders" icon-name="custom:custom63">
+        <template if:true={recentOrders}>
+            <table class="slds-table slds-table_cell-buffer slds-table_bordered slds-table_striped">
+                <thead>
+                    <tr>
+                        <th scope="col"><lightning-button variant="neutral" label="Order No" disabled></lightning-button></th>
+                        <th scope="col"><lightning-button variant="neutral" label="Order Amount" disabled></lightning-button></th>
+                        <th scope="col"><lightning-button variant="neutral" label="Status" disabled></lightning-button></th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <template for:each={recentOrders} for:item="order">
+                        <tr key={order.Id}>
+                            <td>{order.Name}</td>
+                            <td>{order.Total__c}</td>
+                            <td>{order.Status__c}</td>
+                        </tr>
+                    </template>
+                </tbody>
+            </table>
+        </template>
+        <template if:true={error}>
+            <p>Error loading recent orders: {error.message}</p>
+        </template>
+    </lightning-card>
+</template>

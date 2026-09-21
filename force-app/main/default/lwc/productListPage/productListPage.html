@@ -1,0 +1,29 @@
+<template>
+    <lightning-card title="Product Details" icon-name="standard:product">
+        <template if:true={product}>
+            <div class="slds-grid slds-wrap slds-p-around_small">
+              
+                <div class="slds-col slds-size_1-of-2">
+                    <img src={product.heroImageUrl} alt="Product Image" if:true={product.heroImageUrl} />
+                    <template if:false={product.heroImageUrl}>
+                        <p>No image available</p>
+                    </template>
+                </div>
+
+                <div class="slds-col slds-size_1-of-2 slds-p-around_small">
+                    <h2>{product.productName}</h2>
+                    <p>{product.description}</p>
+                    <p><strong>Price:</strong> ${product.productPrice}</p>
+                    <p><strong>Status:</strong> {product.isInStock}</p>
+                    <p><strong>Remaining Quantity:</strong> {product.remainingQuantity}</p>
+                    <lightning-button label="Add to Cart" data-id={product.productId} onclick={handleAddToCart}></lightning-button>
+                        <lightning-button label="Go to Cart" data-id={product.productId} onclick={handleGoToCart}></lightning-button>
+                </div>
+            </div>
+        </template>
+
+        <template if:true={error}>
+            <p class="slds-text-color_error">Error loading product details</p>
+        </template>
+    </lightning-card>
+</template>
